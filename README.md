@@ -9,7 +9,7 @@ This project is open to the public — feel free to try it and drop your feedbac
 ## 🚀 Live Demo
 
 🔗 [Click here to try MoodAnalyzer](https://moodanalyzer-461407.uc.r.appspot.com/)  
-*(Replace with your actual deployed URL)*
+
 
 ---
 
