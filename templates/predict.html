@@ -1,0 +1,96 @@
+<!-- templates/predict.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Predict | Emotion Predictor</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(to right,#00c6ff, #ff00a0);
+            color: white;
+            padding-top: 50px;
+        }
+        .form-container {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 30px;
+            max-width: 800px;
+            margin: auto;
+            color: white;
+        }
+        .form-label {
+            font-weight: 600;
+        }
+        .btn-predict {
+            background-color: #ffcc00;
+            color: #000;
+            font-weight: bold;
+            border: none;
+        }
+        .btn-predict:hover {
+            background-color: #ffd633;
+        }
+        .output-msg {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #fff;
+            text-align: center;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container form-container">
+        <h2 class="text-center mb-4">🚀 Predict Your Emotion Based on Social Media</h2>
+        <form method="POST">
+            {{ form.hidden_tag() }}
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    {{ form.age.label(class="form-label") }}
+                    {{ form.age(class="form-select") }}
+                </div>
+                <div class="col-md-6 mb-3">
+                    {{ form.gender.label(class="form-label") }}
+                    {{ form.gender(class="form-select") }}
+                </div>
+                <div class="col-md-6 mb-3">
+                    {{ form.platform.label(class="form-label") }}
+                    {{ form.platform(class="form-select") }}
+                </div>
+                <div class="col-md-6 mb-3">
+                    {{ form.daily_usage_time.label(class="form-label") }}
+                    {{ form.daily_usage_time(class="form-control", placeholder="e.g. 120") }}
+                </div>
+                <div class="col-md-6 mb-3">
+                    {{ form.post_per_day.label(class="form-label") }}
+                    {{ form.post_per_day(class="form-control") }}
+                </div>
+                <div class="col-md-6 mb-3">
+                    {{ form.likes_per_day.label(class="form-label") }}
+                    {{ form.likes_per_day(class="form-control") }}
+                </div>
+                <div class="col-md-6 mb-3">
+                    {{ form.comments_received.label(class="form-label") }}
+                    {{ form.comments_received(class="form-control") }}
+                </div>
+                <div class="col-md-6 mb-3">
+                    {{ form.messages_sent.label(class="form-label") }}
+                    {{ form.messages_sent(class="form-control") }}
+                </div>
+            </div>
+            <div class="text-center">
+                {{ form.submit(class="btn btn-predict px-5 py-2 mt-3") }}
+            </div>
+        </form>
+
+        {% if output %}
+            <div class="output-msg">
+                {{ output }}
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>

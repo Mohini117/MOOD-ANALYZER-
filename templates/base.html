@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }} | EmoPredict</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" href="https://img.icons8.com/color/48/brain.png">
+</head>
+<body class="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 min-h-screen font-sans text-white">
+
+    <nav class="p-5 shadow-md bg-white bg-opacity-20 backdrop-blur-lg flex justify-between items-center">
+        <h1 class="text-3xl font-bold">😎 EmoPredict</h1>
+        <div>
+            <a href="{{ url_for('home') }}" class="px-4 py-2 hover:text-yellow-300">Home</a>
+            <a href="{{ url_for('predict') }}" class="px-4 py-2 hover:text-yellow-300">Predict</a>
+        </div>
+    </nav>
+
+    <main class="flex justify-center items-center mt-10 px-6">
+        {% block content %}{% endblock %}
+    </main>
+
+</body>
+</html>
